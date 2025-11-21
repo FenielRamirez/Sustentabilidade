@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustentabilidade como Vantagem Competitiva | E-book Gratuito</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Earthy Green -->
+    <!-- Application Structure Plan: A landing page com estrutura de "artigo de blog". O topo (above the fold) foca na conversão com o copy da "PERGUNTA 3". Um layout de duas colunas apresenta o copy principal e o formulário. O formulário é interativo via JS: um botão inicial (CTA) revela o formulário; após o envio (simulado), o formulário é ocultado e um link de download é exibido. Isso atende à restrição do GitHub Pages (site estático). Abaixo, um artigo SEO completo sobre o tema engaja o leitor e um CTA final o leva de volta ao formulário principal. -->
+    <!-- Visualization & Content Choices: O "dado" aqui é o copy de conversão e o artigo. A interatividade não é um gráfico, mas sim o fluxo do formulário de captura de leads. Informação (Copy da PERGUNTA 3) -> Objetivo (Capturar Lead) -> Método (Formulário JS interativo) -> Interação (Clique revela form, Envio revela download) -> Justificativa (Simula um funil de conversão em um site estático, testando a habilidade de UI/UX do candidato). -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .prose h2 {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .prose p {
+            font-size: 1.125rem; /* text-lg */
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+        }
+        .prose ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .prose li {
+            font-size: 1.125rem; /* text-lg */
+            line-height: 1.75;
+            margin-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navegação Simples -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-bold text-green-800">ESGPro</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero / Above the Fold (Baseado na PERGUNTA 3) -->
+        <section class="bg-white py-16 sm:py-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Coluna de Copy -->
+                    <div>
+                        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                            E-book gratuito: o framework para dobrar a eficiência das suas ações ESG
+                        </h1>
+                        <p class="mt-6 text-xl text-gray-600">
+                            Método usado por consultorias líderes, com checklists e templates prontos.
+                        </p>
+                        <ul class="mt-8 space-y-4">
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-3 text-lg font-medium text-gray-700">Priorize: Identifique os Gaps ESG mais críticos.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-3 text-lg font-medium text-gray-700">Implemente: Use nossos templates para agir rápido.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="flex-shrink-0 h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                <span class="ml-3 text-lg font-medium text-gray-700">Meça: Acompanhe o ROI das suas ações.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Coluna do Formulário (Conversão) -->
+                    <div id="conversion-block" class="bg-gray-50 rounded-2xl shadow-xl p-8 md:p-10">
+                        
+                        <!-- 1. Estado Inicial: Botão CTA -->
+                        <div id="ctaButtonContainer">
+                            <h3 class="text-2xl font-bold text-center text-gray-900">Receba o E-book Gratuito</h3>
+                            <p class="text-center text-gray-600 mt-2">Acesse o framework completo agora.</p>
+                            <button id="showFormButton" class="mt-8 w-full bg-green-700 hover:bg-green-800 text-white font-bold py-4 px-6 rounded-lg text-lg shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
+                                BAIXAR E-BOOK AGORA
+                            </button>
+                            <p class="mt-4 text-sm text-gray-500 text-center">
+                                Sem spam. PDF direto no seu e-mail.
+                            </p>
+                        </div>
+
+                        <!-- 2. Estado Oculto: Formulário -->
+                        <form id="ebookForm" class="hidden space-y-5">
+                            <h3 class="text-2xl font-bold text-center text-gray-900">Quase lá...</h3>
+                            <p class="text-center text-gray-600 mt-2">Preencha para receber seu e-book.</p>
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Nome Completo</label>
+                                <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">E-mail Corporativo</label>
+                                <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                            </div>
+                             <div>
+                                <label for="company" class="block text-sm font-medium text-gray-700">Empresa</label>
+                                <input type="text" id="company" name="company" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500">
+                            </div>
+                            <button type="submit" class="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-4 px-6 rounded-lg text-lg shadow-lg transition duration-300 ease-in-out">
+                                ENVIAR E RECEBER
+                            </button>
+                            <p class="mt-4 text-sm text-gray-500 text-center">
+                                Sem spam. PDF direto no seu e-mail.
+                            </p>
+                        </form>
+
+                        <!-- 3. Estado Final: Link de Download (URL DE GOOGLE DRIVE INSERTADA AQUÍ) -->
+                        <div id="downloadLinkContainer" class="hidden text-center">
+                            <h3 class="text-2xl font-bold text-gray-900">Obrigado!</h3>
+                            <p class="text-gray-600 mt-3 text-lg">Seu download está pronto.</p>
+                            <svg class="w-16 h-16 text-green-600 mx-auto mt-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            
+                            <!-- URL de DESCARGA DIRECTA (ajustada a formato Google Drive) -->
+                            <a href="https://drive.google.com/uc?export=download&id=1g08cvynkNgpb4RMRS6MV9ukgTPbhiBaK" download="Framework_ESG_Vantagem_Competitiva.pdf" class="mt-8 inline-block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg text-lg shadow-lg transition duration-300 ease-in-out">
+                                CLIQUE AQUI PARA BAIXAR
+                            </a>
+                            
+                            <p class="mt-4 text-sm text-gray-500">Se o download não iniciar, clique novamente.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção do Artigo de Blog (Conteúdo SEO) -->
+        <article class="py-16 sm:py-24">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose">
+                <h2>Sustentabilidade não é custo, é vantagem competitiva: Entenda o porquê</h2>
+                
+                <p>Por décadas, a sustentabilidade foi vista pelas empresas como um centro de custo, uma obrigação regulatória ou, na melhor das hipóteses, uma ferramenta de relações públicas. Hoje, essa visão está obsoleta. Empresas líderes em seus setores não tratam mais o ESG (Ambiental, Social e Governança) como um apêndice, mas como o núcleo de sua estratégia de longo prazo. Elas entenderam que a sustentabilidade é, de fato, uma das maiores fontes de vantagem competitiva da nossa era.</p>
+
+                <p>Mas como essa transição de "obrigação" para "oportunidade" acontece na prática? E como sua empresa pode parar de apenas "fazer o mínimo" e começar a lucrar com uma operação verdadeiramente sustentável?</p>
+
+                <h2>O que é Vantagem Competitiva Sustentável?</h2>
+                
+                <p>Vantagem competitiva sustentável refere-se à capacidade de uma empresa em superar seus concorrentes de forma consistente e duradoura. Quando adicionamos o factor "sustentabilidade", falamos de empresas que integram práticas ambientais, sociais e de governança em seu modelo de negócios para criar valor de uma forma que os concorrentes não conseguem replicar facilmente.</p>
+                
+                <p>Isso vai além de simplesmente plantar árvores ou ter um programa de voluntariado. Trata-se de redesenhar processos, produtos e até mesmo o modelo de negócios para que sejam inerentemente mais eficientes, resilientes e alinhados com as demandas de um novo perfil de consumidor, investidor e talento.</p>
+
+                <h2>Por que a Sustentabilidade Deixou de Ser Opcional?</h2>
+
+                <p>A mudança está sendo impulsionada por três forças principais que estão remodelando o mercado global:</p>
+
+                <ul>
+                    <li><strong>Consumidores Exigentes:</strong> O consumidor moderno não compra apenas um produto; ele compra os valores da marca. Estudos mostram que mais de 70% dos consumidores preferem marcas alinhadas com seus valores pessoais, e a sustentabilidade está no topo dessa lista.</li>
+                    <li><strong>Investidores de Olho no Risco:</strong> O capital está migrando. Investidores (especialmente os grandes fundos) usam métricas ESG para avaliar riscos. Empresas com má gestão ambiental ou social são vistas como investimentos de alto risco. Em contrapartida, empresas com forte desempenho ESG têm acesso a "green bonds" e capitais mais baratos.</li>
+                    <li><strong>Guerra por Talentos:</strong> A nova geração de profissionais não quer apenas um salário; quer um propósito. Empresas com uma missão clara de sustentabilidade e responsabilidade social atraem e retêm os melhores talentos, reduzindo custos de turnover e aumentando a inovação.</li>
+                </ul>
+
+                <img src="https://placehold.co/800x400/a3e635/1a472a?text=ESG+Impulsiona+Crescimento" alt="Gráfico mostrando o crescimento do investimento ESG" class="rounded-lg shadow-md my-8">
+
+                <h2>5 Formas de Transformar ESG em Vantagem Competitiva Real</h2>
+
+                <p>Integrar o ESG não precisa ser um mistério. O valor é gerado de formas muito concretas:</p>
+
+                <ol class="list-decimal list-inside space-y-4">
+                    <li class="text-lg"><strong>Inovação e Eficiência Operacional:</strong> Reduzir o consumo de energia não é bom apenas para o planeta; é bom para o fluxo de caixa. Otimizar a logística para diminuir emissões também reduz custos de combustível. A sustentabilidade força a inovação em eficiência.</li>
+
+                    <li class="text-lg"><strong>Valor de Marca e Reputação:</strong> Marcas que lideram em sustentabilidade ganham a confiança do consumidor. Essa confiança se traduz em lealdade, menor sensibilidade a preço e marketing boca a boca positivo.</li>
+
+                    <li class="text-lg"><strong>Gestão de Riscos (Resiliência):</strong> Empresas que mapeiam seus riscos climáticos e sociais estão mais preparadas para interrupções na cadeia de suprimentos, novas regulações ou crises de reputação. Elas são mais resilientes.</li>
+
+                    <li class="text-lg"><strong>Atração de Capital:</strong> Como mencionado, ter um bom rating ESG abre portas para linhas de crédito específicas, fundos de investimento dedicados (que já somam trilhões de dólares) e melhora a avaliação geral da empresa no mercado.</li>
+                    
+                    <li class="text-lg"><strong>Acesso a Novos Mercados:</strong> Muitos contratos governamentais e licitações de grandes corporações agora exigem certificaciones de sustentabilidade. Ser sustentável deixa de ser um diferencial e passa a ser uma licença para operar em novos mercados.</li>
+                </ol>
+
+                <h2>O Desafio: Medir o que Realmente Importa</h2>
+
+                <p>O maior desafio que ouvimos dos gestores não é a *vontade* de ser sustentável, mas a *dificuldade* em saber por onde começar e como medir o retorno sobre o investimento (ROI) de suas ações.</p>
+
+                <p>Muitas empresas investem em ações ESG dispersas, sem um framework claro, e acabam desperdiçando recursos sem gerar impacto real ou vantagem competitiva. Elas não sabem como priorizar, implementar de forma eficiente ou medir os resultados financeiros e de impacto.</p>
+
+                <p>É exatamente esse problema que nosso e-book resolve. Criamos um framework passo a passo, usado por consultorias líderes, para ajudar sua empresa a transformar boas intenções em resultados estratégicos mensuráveis.</p>
+
+            </div>
+        </article>
+
+        <!-- CTA Final -->
+        <section class="bg-white py-16 sm:py-24">
+            <div class="max-w-3xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+                    Transforme sua estratégia ESG hoje mesmo
+                </h2>
+                <p class="mt-6 text-xl text-gray-600">
+                    Gostou do que leu? O artigo é apenas a ponta do iceberg. Baixe o framework completo com checklists e templates prontos para implementar.
+                </p>
+                <button id="finalCTAButton" class="mt-10 bg-green-700 hover:bg-green-800 text-white font-bold py-4 px-8 rounded-lg text-xl shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    Quero o E-book Gratuito
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+            <p>&copy; 2025 ESGPro. Todos os direitos reservados.</p>
+            <p class="mt-2 text-sm">Esta landing page é um material de demonstração técnica.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para a interatividade do formulário -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const showFormButton = document.getElementById('showFormButton');
+            const ebookForm = document.getElementById('ebookForm');
+            const ctaButtonContainer = document.getElementById('ctaButtonContainer');
+            const downloadLinkContainer = document.getElementById('downloadLinkContainer');
+            const finalCTAButton = document.getElementById('finalCTAButton');
+            const conversionBlock = document.getElementById('conversion-block');
+
+            // 1. Lógica para o botão CTA principal (Above the fold)
+            showFormButton.addEventListener('click', function() {
+                ctaButtonContainer.classList.add('hidden');
+                ebookForm.classList.remove('hidden');
+            });
+
+            // 2. Lógica para o envio do formulário
+            ebookForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Impede o envio real do formulário
+                
+                // Simulación de captura de datos (para la prueba)
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                console.log('Lead Capturado (Simulación):', { name, email });
+
+                // Esconde o formulário e mostra o link de download
+                ebookForm.classList.add('hidden');
+                downloadLinkContainer.classList.remove('hidden');
+            });
+
+            // 3. Lógica para o botón CTA final (no fim do artigo)
+            finalCTAButton.addEventListener('click', function() {
+                // Rola suavemente de volta para o bloco de conversão
+                conversionBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Opcional: Abre o formulário directamente se ainda não foi aberto
+                if (!ebookForm.classList.contains('hidden')) {
+                    // O formulário já está visível, não faz nada
+                } else if (!downloadLinkContainer.classList.contains('hidden')) {
+                    // O download já foi mostrado, não faz nada
+                } else {
+                    // Oculta o botão inicial e mostra o formulário
+                    ctaButtonContainer.classList.add('hidden');
+                    ebookForm.classList.remove('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
